@@ -1,0 +1,64 @@
+Perencanaan Folder Views
+
+<auth>
+	<template>
+		index.php X
+	login.php X
+
+	register.php X
+
+	otp.php
+
+<users>
+	<pelanggan>
+		<template>
+			index.php X
+		dashboard.php X
+		keranjang.php
+		checkout.php
+		pembayaran.php
+
+		profil.php
+
+		notifikasi.php
+		pesanan.php
+		detail_pesanan.php
+
+
+		detail_barang.php
+
+		cari_barang.php
+			
+	<krew>
+		<template>
+			index.php
+		dashboard.php
+
+		kelola_pesanan.php
+
+	<admin>
+		<template>
+			index.php
+		dashboard.php
+
+		Laporan.php
+		
+		manajemen_akun.php
+
+		manajemen_barang.php
+
+
+Perencanaan Folder Controller
+
+Auth.php
+Pelanggan.php
+Admin.php
+Krew.php
+
+Perencanaan Konfigurasi Routes
+
+...
+
+Perencanaan Konfigurasi Model
+
+...
