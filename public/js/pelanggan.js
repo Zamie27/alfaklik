@@ -1,7 +1,21 @@
+// document.getElementById("see-more").addEventListener("click", function () {
+//   const hiddenItems = document.querySelectorAll("#product-list .hidden");
+//   hiddenItems.forEach((item) => item.classList.remove("hidden"));
+//   this.style.display = "none"; // Sembunyikan tombol setelah klik
+// });
+// Before
+// After
 document.getElementById("see-more").addEventListener("click", function () {
-  const hiddenItems = document.querySelectorAll("#product-list .hidden");
-  hiddenItems.forEach((item) => item.classList.remove("hidden"));
-  this.style.display = "none"; // Sembunyikan tombol setelah klik
+  // Pilih semua elemen yang tersembunyi (dengan inline style display: none;)
+  const hiddenItems = document.querySelectorAll(
+    "#product-list .col[style='display: none;']"
+  );
+
+  // Tampilkan elemen dengan menghapus atribut display
+  hiddenItems.forEach((item) => (item.style.display = "block"));
+
+  // Sembunyikan tombol setelah semua elemen ditampilkan
+  this.style.display = "none";
 });
 
 // Simulate user login status

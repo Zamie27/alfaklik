@@ -2,10 +2,15 @@
 
 namespace App\Controllers;
 
+use App\Models\BarangModel;
+
 class Home extends BaseController
 {
     public function index()
     {
-        return view('dashboard');
+        $model = new BarangModel();
+        $data['barang'] = $model->findAll();
+
+        return view('dashboard', $data);
     }
 }

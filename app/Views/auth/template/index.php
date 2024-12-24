@@ -19,7 +19,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top">
         <div class="container">
             <!-- Logo -->
-            <a class="navbar-brand d-flex align-items-center" href="#">
+            <a class="navbar-brand d-flex align-items-center" href="<?= base_url(); ?>">
                 <img src="<?= base_url(); ?>/img/logo.png" alt="Alfagift Logo" class="me-2" height="40" />
             </a>
             <!-- Search Bar -->
