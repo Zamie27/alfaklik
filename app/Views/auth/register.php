@@ -7,51 +7,49 @@
         <div class="col-lg-4 col-md-6">
             <div class="card shadow-sm">
                 <div class="card-body">
-                    <h4 class="text-center mb-4 mt-2">Daftar</h4>
+                    <h4 class="text-center mb-4 mt-2">Registrasi</h4>
                     <p class="text-center">
                         Sudah punya akun Alfastore?
-                        <a href="<?= base_url() ?>auth/login" class="fw-bold text-decoration-none">Masuk</a>
+                        <a href="<?= url_to('login') ?>" class="fw-bold text-decoration-none">Masuk</a>
                     </p>
-                    <form id="registerForm">
-                        <div class="mb-3">
-                            <label for="noHandphone" class="form-label">No. Handphone</label>
-                            <input type="tel" class="form-control" id="noHandphone" placeholder="Masukkan nomor handphone" required />
-                        </div>
+
+
+                    <?= view('Myth\Auth\Views\_message_block') ?>
+
+                    <form id="registerForm" action="<?= url_to('register') ?>" method="post">
+                        <?= csrf_field() ?>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Masukkan email" required />
+                            <input type="email" class="form-control <?php if (session('errors.email')) : ?>is-invalid<?php endif ?>" name="email" placeholder="Masukkan email" value="<?= old('email') ?>" required />
+                            <small id="emailHelp" class="form-text text-muted"><?= lang('Auth.weNeverShare') ?></small>
                         </div>
                         <div class="mb-3">
                             <label for="username" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="username" placeholder="Masukkan username" required />
+                            <input type="text" class="form-control <?php if (session('errors.username')) : ?>is-invalid<?php endif ?>" name="username" placeholder="Masukkan username" value="<?= old('username') ?>" required />
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
                             <div class="input-group">
-                                <input type="password" class="form-control" id="password" placeholder="Masukkan password" required />
+                                <input type="password" class="form-control <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" name="password" id="password" placeholder="Masukkan password" autocomplete="off" required />
                                 <button class="btn btn-outline-secondary toggle-password" type="button">
                                     <i class="bi bi-eye-slash"></i>
                                 </button>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="confirmPassword" class="form-label">Ulangi Password</label>
+                            <label for="pass_confirm" class="form-label">Ulangi Password</label>
                             <div class="input-group">
-                                <input type="password" class="form-control" id="confirmPassword" placeholder="Masukkan ulang password"
-                                    required />
+                                <input type="password" class="form-control <?php if (session('errors.pass_confirm')) : ?>is-invalid<?php endif ?>" name="pass_confirm" id="confirmPassword" placeholder="Masukkan ulang password" autocomplete="off" required />
                                 <button class="btn btn-outline-secondary toggle-password" type="button">
                                     <i class="bi bi-eye-slash"></i>
                                 </button>
                             </div>
                         </div>
-                        <div class="form-check mb-3">
-                            <input type="checkbox" class="form-check-input" id="agree" required />
-                            <label class="form-check-label" for="agree">
-                                Saya setuju dengan syarat dan ketentuan
-                            </label>
-                        </div>
-                        <button type="button" class="btn btn-danger w-100" id="registerButton">
-                            Daftar
+
+                        <br>
+
+                        <button type="submit" class="btn btn-danger w-100 btn-block" id="registerButton">
+                            <?= lang('Auth.register') ?>
                         </button>
                     </form>
                 </div>

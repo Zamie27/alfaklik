@@ -13,4 +13,13 @@ class Home extends BaseController
 
         return view('dashboard', $data);
     }
+
+    public function logout()
+    {
+        // Hapus session pengguna
+        service('authentication')->logout();
+
+        // Redirect ke halaman login atau halaman lain
+        return redirect()->to('/login');
+    }
 }

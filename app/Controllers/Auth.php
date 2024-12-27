@@ -20,4 +20,10 @@ class Auth extends BaseController
         // Menampilkan view register
         return view('auth/register');
     }
+
+    public function otp()
+    {
+        // Menampilkan view register
+        return view('auth/otp');
+    }
 }

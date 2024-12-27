@@ -31,16 +31,16 @@
             </div> -->
             <!-- Icons and Links -->
             <div class="d-flex align-items-center">
-                <a href="<?= base_url() ?>auth/login" class="btn btn-light border-0 me-2">
+                <a href="<?= url_to('login') ?>" class="btn btn-light border-0 me-2">
                     <i class="bi bi-bell"></i>
                 </a>
-                <a href="<?= base_url() ?>auth/login" class="btn btn-light border-0 me-4">
+                <a href="<?= url_to('login') ?>" class="btn btn-light border-0 me-4">
                     <i class="bi bi-cart"></i>
                 </a>
-                <a href="<?= base_url() ?>auth/register" class="btn btn-link text-danger me-3">
+                <a href="<?= url_to('register') ?>" class="btn btn-link text-danger me-3">
                     Daftar
                 </a>
-                <a href="<?= base_url() ?>auth/login" class="btn btn-link text-secondary">Masuk</a>
+                <a href="<?= url_to('login') ?>" class="btn btn-link text-secondary">Masuk</a>
             </div>
         </div>
     </nav>

@@ -1,4 +1,4 @@
-<?= $this->extend('users/pelanggan/template/index'); ?>
+<?= $this->extend('template/index'); ?>
 
 <?= $this->section('content'); ?>
 
@@ -66,8 +66,11 @@
         <?php endforeach; ?>
     </div>
 
+
     <!-- Tombol Lihat Lainnya -->
     <div class="text-center mt-4">
+        <a href="<?= url_to('logout') ?>" class="btn btn-danger">Logout</a>
+
         <button id="see-more" class="btn btn-danger">Lihat Lainnya</button>
     </div>
 </div>

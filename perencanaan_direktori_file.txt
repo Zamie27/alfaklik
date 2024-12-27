@@ -7,7 +7,7 @@ Perencanaan Folder Views
 
 	register.php X
 
-	otp.php
+	otp.php X
 
 <users>
 	<pelanggan>
